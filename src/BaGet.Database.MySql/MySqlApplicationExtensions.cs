@@ -15,7 +15,7 @@ namespace BaGet
             {
                 var databaseOptions = provider.GetRequiredService<IOptionsSnapshot<DatabaseOptions>>();
 
-                options.UseMySql(databaseOptions.Value.ConnectionString);
+                options.UseMySql(databaseOptions.Value.ConnectionString, new MariaDbServerVersion("10.11.13"));
             });
 
             return app;
